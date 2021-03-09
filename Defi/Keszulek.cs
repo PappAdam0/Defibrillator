@@ -73,15 +73,15 @@ namespace Defi
             this.address = address;
         }
 
-        public double DistCalc(double x, double y)
+        public void DistCalc(double x, double y)
         {
             double a = (x - longitude) * Math.Cos((y + latitude) / 2);
             double b = latitude - y;
 
             double distance = Math.Sqrt(a * a + b * b) * 6371;
 
-            return distance;
             
+
         }
     }
 }

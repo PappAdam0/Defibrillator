@@ -24,21 +24,25 @@ namespace Defi
 
         private void btAdatok_Click(object sender, EventArgs e)
         {
-            StreamReader sr = new StreamReader("data.csv");
-            sr.ReadLine();
+            StreamReader be = new StreamReader("data.csv");
+            be.ReadLine();
 
-            while (!sr.EndOfStream)
+            while (!be.EndOfStream)
             {
-                string[] a = sr.ReadLine().Split(';');
+                string[] a = be.ReadLine().Split(';');
                 lista.Add(new Keszulek(Convert.ToInt32(a[0]), a[1], Convert.ToDouble(a[2]), Convert.ToDouble(a[3]), a[4], a[5]));
             }
-            sr.Close();
+            be.Close();
+
+            //double x = Convert.ToDouble(tBX);
+            //double y = Convert.ToDouble(tBY);
 
 
-            foreach (var i in lista)
-            {
-                lBKiiras.Items.Add(i.Name);
-            }
+            //foreach (var i in lista)
+            //{
+            //    lBKiiras.Items.Add($"{DistCalc(x,y)}");
+            //}
+
         }
 
         private void btnKilepes_Click(object sender, EventArgs e)
@@ -49,10 +53,15 @@ namespace Defi
         private void btnUjAdat_Click(object sender, EventArgs e)
         {
             lBKiiras.Items.Clear();
-            mTBX.Text = "";
-            mTBY.Text = "";
+            tBX.Text = "";
+            tBY.Text = "";
 
-            MessageBox.Show("Az adatok törlésre kerültek");
+            MessageBox.Show("Adatok törölve");
+        }
+
+        private void lBKiiras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -30,12 +30,12 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.mTBX = new System.Windows.Forms.MaskedTextBox();
-            this.mTBY = new System.Windows.Forms.MaskedTextBox();
             this.btAdatok = new System.Windows.Forms.Button();
             this.lBKiiras = new System.Windows.Forms.ListBox();
             this.btnUjAdat = new System.Windows.Forms.Button();
             this.btnKilepes = new System.Windows.Forms.Button();
+            this.tBX = new System.Windows.Forms.TextBox();
+            this.tBY = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -58,20 +58,6 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Y Koordinata";
             // 
-            // mTBX
-            // 
-            this.mTBX.Location = new System.Drawing.Point(220, 21);
-            this.mTBX.Name = "mTBX";
-            this.mTBX.Size = new System.Drawing.Size(100, 26);
-            this.mTBX.TabIndex = 2;
-            // 
-            // mTBY
-            // 
-            this.mTBY.Location = new System.Drawing.Point(220, 63);
-            this.mTBY.Name = "mTBY";
-            this.mTBY.Size = new System.Drawing.Size(100, 26);
-            this.mTBY.TabIndex = 3;
-            // 
             // btAdatok
             // 
             this.btAdatok.Location = new System.Drawing.Point(134, 95);
@@ -90,6 +76,7 @@
             this.lBKiiras.Name = "lBKiiras";
             this.lBKiiras.Size = new System.Drawing.Size(302, 244);
             this.lBKiiras.TabIndex = 5;
+            this.lBKiiras.SelectedIndexChanged += new System.EventHandler(this.lBKiiras_SelectedIndexChanged);
             // 
             // btnUjAdat
             // 
@@ -111,17 +98,31 @@
             this.btnKilepes.UseVisualStyleBackColor = true;
             this.btnKilepes.Click += new System.EventHandler(this.btnKilepes_Click);
             // 
+            // tBX
+            // 
+            this.tBX.Location = new System.Drawing.Point(220, 15);
+            this.tBX.Name = "tBX";
+            this.tBX.Size = new System.Drawing.Size(100, 26);
+            this.tBX.TabIndex = 8;
+            // 
+            // tBY
+            // 
+            this.tBY.Location = new System.Drawing.Point(220, 60);
+            this.tBY.Name = "tBY";
+            this.tBY.Size = new System.Drawing.Size(100, 26);
+            this.tBY.TabIndex = 9;
+            // 
             // foForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 478);
+            this.Controls.Add(this.tBY);
+            this.Controls.Add(this.tBX);
             this.Controls.Add(this.btnKilepes);
             this.Controls.Add(this.btnUjAdat);
             this.Controls.Add(this.lBKiiras);
             this.Controls.Add(this.btAdatok);
-            this.Controls.Add(this.mTBY);
-            this.Controls.Add(this.mTBX);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -139,12 +140,12 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.MaskedTextBox mTBX;
-        private System.Windows.Forms.MaskedTextBox mTBY;
         private System.Windows.Forms.Button btAdatok;
         private System.Windows.Forms.ListBox lBKiiras;
         private System.Windows.Forms.Button btnUjAdat;
         private System.Windows.Forms.Button btnKilepes;
+        private System.Windows.Forms.TextBox tBX;
+        private System.Windows.Forms.TextBox tBY;
     }
 }
 
